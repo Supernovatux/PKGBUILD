@@ -2,7 +2,7 @@
 _electron=electron
 _pkgname='mendeley-reference-manager'
 pkgname=${_pkgname}-electron
-pkgver=2.130.2
+pkgver=2.143.0
 pkgrel=1
 pkgdesc="Mendeley Reference Manager using system provided ${_electron} for increased security and performance"
 arch=('x86_64')
@@ -14,7 +14,7 @@ license=('custom')
 
 _file=${_pkgname}-${pkgver}-x86_64.AppImage
 source=(https://static.mendeley.com/bin/desktop/${_file})
-sha256sums=('1cb514a16fa3d16f62106bb422b6ddff2ed5823dab0864fbb4318cce6321dea2')
+sha256sums=('c563d8638a9f46362eb130b4f720db8bf310f7d46334788f7fdb8b72a59eb81f')
 
 options=('!strip')
 
