@@ -1,1 +1,1 @@
-## PKGBUIDS I manintain
+## PKGBUIDS I maintain
