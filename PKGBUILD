@@ -12,8 +12,8 @@ depends=("${_electron}" 'harfbuzz' 'libgl' 'libxss')
 url='https://www.mendeley.com/download-reference-manager'
 license=('custom')
 
-_file=${_pkgname}-${pkgver}-x86_64.AppImage
-source=(https://static.mendeley.com/bin/desktop/${_file})
+_file=${_pkgname}-${pkgver}-${CARCH}.AppImage
+source=("https://static.mendeley.com/bin/desktop/${_file}")
 sha256sums=('c563d8638a9f46362eb130b4f720db8bf310f7d46334788f7fdb8b72a59eb81f')
 
 options=('!strip')
@@ -32,8 +32,8 @@ package() {
   install -d "$pkgdir"/usr/share/applications/
   install -d "$pkgdir"/usr/share/icons/
   echo '#!/bin/sh' >> "$pkgdir"/usr/bin/${_pkgname}
-  echo "exec electron /usr/lib/${_pkgname}/app.asar \"\$@\"" >> "$pkgdir"/usr/bin/${_pkgname}
-  chmod +x ${pkgdir}/usr/bin/${_pkgname}
+  echo "exec ${_electron} /usr/lib/${_pkgname}/app.asar \"\$@\"" >> "$pkgdir"/usr/bin/${_pkgname}
+  chmod +x "${pkgdir}/usr/bin/${_pkgname}"
   
   install -m644 squashfs-root/mendeley-reference-manager.png "$pkgdir"/usr/share/icons/
 
